@@ -77,7 +77,7 @@ descriptions[3] = "how did you get here?";
 descriptions[4] = "je staat bij de broodafdeling, er liggen bolletjes en planken vol brood. niks echt iets bijzonder hier.";
 descriptions[5] = "je staat bij de kaas afdeling. er is nooit te weinig KAAS.";
 descriptions[6] = " je ziet ehh..... en vrouw zittend op een troon van toilet papier voor de magazijn deur. ze zegt: YOU! if you want some of my precious toilet paper you'll need to defeat ME!'....(editer note the key is not functional so i just unlocked the room for now)";
-descriptions[7] = "You have proven yourself worthy. the toilet paper is yours. je staat in het magazijn en vindt een kamer VOL met toilet papier! YOU WON! ";
+descriptions[7] = "na een gevecht met de koninging heb jij haar verslagen. ze zegt ineens:You have proven yourself worthy. the toilet paper is yours. je staat in het magazijn en vindt een kamer VOL met toilet papier! YOU WON! ";
 descriptions[8] = "je staat in de zuivel afdeling. ik denk niet dat we melk te kort hebben.";
 descriptions[9] = "je staat in de chips schappen. zo te zien met alle jongere die thuis blijven is zowat alles uitverkocht.";
 descriptions[10] = "je staat eindelijk bij het toilet papie- ow er is niks meer over! maar je kan niet gaan zonder.";
@@ -138,8 +138,12 @@ function getInput(evt) {
 
     if (inputArray[0] == "pak") {
       console.log('ga wat pakken');
-      if  ( treasures[currentLocation].indexOf(inputArray[1]) != -1){
+        if (treasures[currentLocation] != "undefined" ){
+      usingtreasures.push( treasures[currentLocation]);
+      console.log(usingtreasures);
+      treasures[currentLocation] = "";
       gotSword = true;
+      giveLocation() ;
      console.log('its over anakin...i got the highground.')
       }
       myInput.value = "";
